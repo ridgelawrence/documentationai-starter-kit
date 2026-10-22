@@ -1,0 +1,206 @@
+---
+title: Using WRLD Services
+description: Explore how to work with the most common WRLD services and workflows. Includes practical guidance for navigating support, hosting, design, and AI-related resources.
+---
+
+## Overview
+
+WRLD Tech is the help center and documentation hub for every WRLD division. You can use this guide to navigate support, hosting, design, and AI-related workflows without needing to know the full internal structure up front.
+
+This page is a starter kit template. It gives you a practical path through the most common service areas so you can adapt it to your own content and processes.
+
+<Callout kind="info">
+  If you are building out a larger documentation set, fetch the complete index from `/llms.txt` first so you can map the available pages before you expand the guide.
+</Callout>
+
+## Key service areas
+
+The WRLD ecosystem is broad, but the day-to-day workflows usually fall into a few clear categories. Use the cards below as a simple way to orient readers before they dive into detailed instructions.
+
+<Columns cols={2}>
+  <Card title="Support workflows" icon="help-circle" href="/support/overview">
+    Learn how to submit requests, track progress, and resolve common issues faster.
+  </Card>
+  <Card title="Hosting resources" icon="cloud" href="/wrld-host/overview">
+    Find the guidance you need for domains, server access, and hosting operations.
+  </Card>
+  <Card title="Design system usage" icon="book-open" href="/wrld-design/overview">
+    Keep UI work aligned with brand and component standards.
+  </Card>
+  <Card title="AI and automation" icon="zap" href="/wrld-ai/overview">
+    Use AI-assisted workflows for faster delivery and repeatable tasks.
+  </Card>
+</Columns>
+
+## How to get started
+
+Use a simple sequence when you approach a new WRLD workflow. This keeps your work predictable and reduces back-and-forth with support teams.
+
+<Steps>
+  <Step title="Identify the division" icon="users">
+    Decide whether your request belongs to support, hosting, design, AI, or another WRLD division. Start with the page that best matches your goal.
+  </Step>
+  <Step title="Check the available resources" icon="book-open">
+    Review the overview page, related articles, and any linked reference material before you open a ticket or change a live setting.
+  </Step>
+  <Step title="Use the right channel" icon="message-square">
+    Submit a support request when you need help, or use the relevant self-service workflow when the task is routine and documented.
+  </Step>
+  <Step title="Confirm the result" icon="check-circle">
+    Verify the outcome in the dashboard or in the target system, then record any follow-up steps for your team.
+  </Step>
+</Steps>
+
+## Example workflow
+
+The following example shows a lightweight support intake flow that you can adapt for your own team. It uses a simple JSON payload, a form submission, and a response check.
+
+<CodeGroup tabs="JavaScript,cURL,Python">
+  ```javascript
+  const ticket = {
+    subject: "Domain renewal needs review",
+    priority: "medium",
+    department: "WRLD.host",
+    details: "The renewal date is approaching and the customer needs confirmation."
+  };
+
+  const response = await fetch("https://api.example.com/support/tickets", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer YOUR_API_TOKEN"
+    },
+    body: JSON.stringify(ticket)
+  });
+
+  const data = await response.json();
+  console.log(data.ticketId);
+  ```
+
+  ```bash
+  curl -X POST "https://api.example.com/support/tickets" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer YOUR_API_TOKEN" \
+    -d '{
+      "subject": "Domain renewal needs review",
+      "priority": "medium",
+      "department": "WRLD.host",
+      "details": "The renewal date is approaching and the customer needs confirmation."
+    }'
+  ```
+
+  ```python
+  import requests
+
+  payload = {
+      "subject": "Domain renewal needs review",
+      "priority": "medium",
+      "department": "WRLD.host",
+      "details": "The renewal date is approaching and the customer needs confirmation."
+  }
+
+  response = requests.post(
+      "https://api.example.com/support/tickets",
+      headers={
+          "Content-Type": "application/json",
+          "Authorization": "Bearer YOUR_API_TOKEN"
+      },
+      json=payload
+  )
+
+  print(response.json()["ticketId"])
+  ```
+</CodeGroup>
+
+## Platform-specific guidance
+
+Different WRLD tasks often require different tools. Use the tabs below to see how the same workflow changes by context.
+
+<Tabs>
+  <Tab title="Support" icon="help-circle">
+    Open a ticket, attach the relevant screenshots or logs, and include the account identifier so the team can triage quickly.
+
+    ```text
+    Subject: Password reset request
+    Account: wrld-client-2048
+    Impact: User cannot access the dashboard
+    ```
+  </Tab>
+  <Tab title="Hosting" icon="cloud">
+    Check DNS records, confirm service status, and verify any recent changes before you apply a fix.
+
+    ```bash
+    dig example.com
+    curl -I https://dashboard.example.com
+    ```
+  </Tab>
+  <Tab title="Design" icon="book-open">
+    Review the component library, confirm spacing tokens, and align text styles with the approved design language.
+  </Tab>
+  <Tab title="AI" icon="zap">
+    Define the task clearly, provide structured input, and validate the output before you use it in production.
+  </Tab>
+</Tabs>
+
+## Common fields
+
+When you document a service workflow, define the important fields clearly so readers know what to send and what to expect.
+
+<ParamField path="ticketId" param-type="string" required="true">
+  Unique identifier returned when a support request is created.
+</ParamField>
+
+<ParamField query="department" param-type="string" required="false">
+  Limits results to a specific WRLD division such as support, hosting, design, or AI.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token used to authenticate requests to the API.
+</ParamField>
+
+<ParamField body="details" param-type="string" required="true">
+  A concise description of the issue, request, or workflow context.
+</ParamField>
+
+## Best practices
+
+Use the checklist below to keep your documentation helpful and easy to maintain.
+
+- Write for the person completing the task, not for the internal team that already knows the workflow.
+- Prefer direct language and short steps when the process is routine.
+- Keep links consistent and point readers to the smallest useful page.
+- Use one example per workflow so the page stays focused.
+- Validate every external endpoint in a staging environment before you publish instructions.
+
+<Callout kind="tip">
+  When you explain a workflow, include the reason for each step. Readers are more likely to follow a process when they understand why it matters.
+</Callout>
+
+## Advanced notes
+
+Some workflows need extra detail, but that detail should stay optional. Use expandable sections to keep the main page readable while still covering edge cases.
+
+<ExpandableGroup>
+  <Expandable title="How to write a good support request" default-open="true">
+    Include the problem, the affected service, the business impact, and the exact time the issue started. Add logs or screenshots when they help confirm the behavior.
+  </Expandable>
+  <Expandable title="How to prepare a hosting change" default-open="false">
+    Record the current configuration, confirm the expected downtime window, and verify rollback steps before you make the update.
+  </Expandable>
+  <Expandable title="How to review AI output" default-open="false">
+    Check for accuracy, policy compliance, and obvious formatting issues before you reuse generated content in a customer-facing workflow.
+  </Expandable>
+</ExpandableGroup>
+
+## Next steps
+
+If you want to expand this starter kit, create one page for each major division and keep the language consistent across the set. You can then add deeper examples, role-specific procedures, and references to the dashboard, support portal, and product-specific documentation.
+
+<Columns cols={2}>
+  <Card title="Support overview" icon="help-circle" href="/support/overview" horizontal>
+    Start with the support workflow and ticketing path.
+  </Card>
+  <Card title="Getting started" icon="book-open" href="/quickstart" horizontal>
+    Review the quickstart path for a faster onboarding flow.
+  </Card>
+</Columns>

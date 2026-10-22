@@ -1,0 +1,163 @@
+---
+title: Workspace and Access Setup
+description: Learn how to configure your WRLD experience across the portal, support channels, and service areas. Covers the settings and access details users most commonly need.
+---
+
+## Overview
+
+Use this page to set up your WRLD workspace, choose how you want to receive support, and confirm the access your team needs across the portal. It is designed as a starter kit, so you can adapt the examples to match your own division, permissions model, and service workflow.
+
+<Callout kind="info">
+  WRLD Tech is the help center and documentation hub for every WRLD division. Use the portal settings below as a baseline, then customize them for your internal process.
+</Callout>
+
+## What you can configure
+
+<Columns cols={2}>
+  <Card title="Portal Setup" icon="settings" href="#portal-setup">
+    Set your workspace name, default dashboard, and notification preferences.
+  </Card>
+  <Card title="Access Permissions" icon="shield" href="#access-permissions">
+    Control who can view tickets, billing details, and service settings.
+  </Card>
+  <Card title="Support Channels" icon="help-circle" href="#support-channels">
+    Choose email, portal, or ticket-based support for your team.
+  </Card>
+  <Card title="Workspace Preferences" icon="users" href="#workspace-preferences">
+    Define the settings that keep your team aligned across divisions.
+  </Card>
+</Columns>
+
+## Portal setup
+
+Start by confirming the basics of your workspace. A clear portal setup helps your users find the right services quickly and reduces support friction later.
+
+<Steps>
+  <Step title="Sign in to the portal" icon="login">
+    Open the WRLD portal and verify that you are using the correct account for your division. If you manage more than one workspace, confirm that the active workspace matches the one you want to configure.
+  </Step>
+  <Step title="Review your workspace profile" icon="settings">
+    Update the workspace name, contact email, and default language. Keep these values consistent with your internal records so ticket routing stays accurate.
+  </Step>
+  <Step title="Save your preferences" icon="check-circle">
+    Save the changes and refresh the portal to confirm the updated settings appear in your dashboard and support views.
+  </Step>
+</Steps>
+
+## Access permissions
+
+Use permissions to control what each person can see and do. Most teams only need a few roles at first, then add more granular access as the workspace grows.
+
+| Role | Can view tickets | Can manage billing | Can edit workspace settings |
+|------|-------------------|--------------------|-----------------------------|
+| Admin | Yes | Yes | Yes |
+| Support Agent | Yes | No | No |
+| Billing Contact | Limited | Yes | No |
+| Viewer | Read-only | No | No |
+
+<Callout kind="tip">
+  Keep admin access limited to the smallest practical group. That makes audits easier and reduces accidental changes.
+</Callout>
+
+## Support channels
+
+Choose the support path that fits your team’s workflow. Some divisions prefer direct email, while others rely on the ticket portal for traceability and handoff.
+
+<Tabs>
+  <Tab title="Email" icon="mail">
+    Use a shared inbox when your team wants simple routing and fast replies.
+
+    ```text
+    helpdesk@wrld.tech
+    ```
+
+    Create a rule set that forwards division-specific requests to the right queue.
+  </Tab>
+  <Tab title="Portal tickets" icon="file-text">
+    Use ticket submission when you need a full audit trail, status tracking, and internal assignment.
+
+    ```text
+    https://help.wrld.tech/support/submit-ticket
+    ```
+
+    Ask users to include the workspace name, issue summary, and impact level.
+  </Tab>
+  <Tab title="Dashboard" icon="monitor">
+    Use the dashboard for account-level actions such as service review, access checks, and subscription management.
+
+    ```text
+    https://dashboard.example.com
+    ```
+
+    Make sure each user sees only the data tied to their role.
+  </Tab>
+</Tabs>
+
+## Workspace preferences
+
+The following settings are useful when you want a consistent experience across divisions. They help you standardize notifications, working hours, and local preferences without overcomplicating the setup.
+
+<CodeGroup tabs="JSON,YAML,Bash">
+  ```json
+  {
+    "workspaceName": "WRLD Tech Co.",
+    "defaultChannel": "portal",
+    "supportEmail": "helpdesk@wrld.tech",
+    "notifications": {
+      "ticketUpdates": true,
+      "weeklySummary": true,
+      "securityAlerts": true
+    }
+  }
+  ```
+  ```yaml
+  workspaceName: WRLD Tech Co.
+  defaultChannel: portal
+  supportEmail: helpdesk@wrld.tech
+  notifications:
+    ticketUpdates: true
+    weeklySummary: true
+    securityAlerts: true
+  ```
+  ```bash
+  export WRLD_WORKSPACE="WRLD Tech Co."
+  export WRLD_SUPPORT_CHANNEL="portal"
+  export WRLD_SUPPORT_EMAIL="helpdesk@wrld.tech"
+  ```
+</CodeGroup>
+
+## Quick reference
+
+| Setting | Recommended value | Why it matters |
+|---------|--------------------|----------------|
+| Workspace name | WRLD Tech Co. | Keeps the portal aligned with your brand |
+| Default support channel | Portal tickets | Preserves history and ownership |
+| Contact email | helpdesk@wrld.tech | Ensures users reach the right team |
+| Notifications | Ticket updates on | Helps your team respond quickly |
+
+## Advanced options
+
+<Expandable title="How do you handle multiple divisions?" default-open="false">
+  
+Use separate workspaces when each division needs different permissions, service queues, or notification rules. If your divisions share the same operational team, you can keep one workspace and route requests by category instead.
+
+</Expandable>
+
+<Expandable title="What should you document first?" default-open="false">
+  
+Start with access rules, support contacts, and the default workflow for handling requests. Those three items remove the most confusion for new users.
+
+</Expandable>
+
+## Next steps
+
+After you finish the setup, review your support intake process and make sure users know where to start. If you need a broader overview of the documentation hub, continue with the WRLD Tech home page and then add division-specific guidance as needed.
+
+<Columns cols={2}>
+  <Card title="WRLD Tech Co. Home" icon="book-open" href="/introduction" horizontal>
+    Review the top-level documentation hub and navigate to the right division.
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/quickstart" horizontal>
+    Follow a guided setup flow for first-time users.
+  </Card>
+</Columns>

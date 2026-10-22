@@ -1,0 +1,179 @@
+---
+title: Core Concepts
+description: Understand the main ideas behind WRLD Tech's multi-division structure and how the documentation ecosystem is organized.
+---
+
+## Overview
+
+WRLD Tech is a documentation hub for a multi-division organization. You use it to understand how the divisions relate to one another, where to find the right entry point, and how the public directory and private portal fit together.
+
+The core idea is simple: one hub, many divisions. You browse shared guidance from the central help center, then move into the division that matches your task, product, or support need.
+
+<Callout kind="info">
+
+This page is a starter kit template. Adapt the division names, links, and terminology to match your real organization structure.
+
+</Callout>
+
+## How the WRLD structure works
+
+At a high level, you can think about WRLD as a set of connected surfaces:
+
+- The help center provides public documentation and guidance.
+- The directory helps people discover the wider WRLD ecosystem.
+- The portal gives logged-in users a place to manage their account or services.
+- Each division owns its own content, workflows, and terminology.
+
+This structure keeps content organized without forcing every audience into the same path. You can publish broad concepts in the hub, then link to specific division pages for deeper workflows.
+
+<Columns cols={2}>
+  <Card title="WRLD Tech" icon="book-open" href="/introduction">
+
+  Use this for product and platform guidance that applies across the hub.
+
+  </Card>
+  <Card title="WRLD.host" icon="server" href="/quickstart">
+
+  Use this for hosting-specific setup, account actions, and service operations.
+
+  </Card>
+  <Card title="WRLD.design" icon="palette" href="/authentication">
+
+  Use this for design systems, brand assets, and creative workflows.
+
+  </Card>
+  <Card title="WRLD.Support" icon="help-circle" href="/changelog">
+
+  Use this for support processes, ticketing, and escalation paths.
+
+  </Card>
+</Columns>
+
+## Shared terminology
+
+When you write or read WRLD documentation, keep the terminology consistent. That makes it easier to scan the hub and understand what belongs where.
+
+| Term | Meaning | Example use |
+|------|---------|-------------|
+| Division | A major WRLD business area with its own scope | WRLD.host, WRLD.design |
+| Hub | The shared documentation center | WRLD Tech docs |
+| Directory | A public index of WRLD properties | The wider WRLD directory |
+| Portal | A signed-in user workspace | Client portal |
+| Support path | The route to help or escalation | Open a ticket or email support |
+
+Use the same naming pattern everywhere you can. If your audience sees a term in one place and a different label elsewhere, they may assume those are two separate systems.
+
+## Getting started with navigation
+
+The fastest way to orient yourself is to follow a simple flow. You can use the help center first, then move into a division page, and then open the portal only when you need account actions.
+
+<Steps>
+  <Step title="Identify the division" icon="search">
+    Decide whether the task belongs to tech, host, design, services, support, or AI.
+  </Step>
+  <Step title="Open the hub page" icon="book-open">
+    Start from the shared documentation area so you can confirm the correct terminology and entry point.
+  </Step>
+  <Step title="Switch to the specific division" icon="arrow-right">
+    Move into the division page when you need setup steps, policies, or product-specific guidance.
+  </Step>
+  <Step title="Use the portal for account work" icon="settings">
+    Go to the portal only when you need billing, services, or user-account actions.
+  </Step>
+</Steps>
+
+## Platform entry points
+
+Different users begin in different places. Some arrive from the public docs, while others go straight to a logged-in workspace. The tabs below show a clean way to explain those paths.
+
+<Tabs>
+  <Tab title="Public docs" icon="book-open">
+
+  You use the public help center when you need orientation, overviews, or step-by-step guidance that does not require login.
+
+  </Tab>
+  <Tab title="Directory" icon="external-link">
+
+  You use the directory when you want to discover WRLD properties, related brands, or external destinations.
+
+  </Tab>
+  <Tab title="Portal" icon="lock">
+
+  You use the portal when you need account-specific tasks such as service management or support actions.
+
+  </Tab>
+</Tabs>
+
+## Example content model
+
+If you are building or revising pages, keep the content model simple and repeatable. A good pattern is to define the audience, explain the concept, show the path, and then link to the next action.
+
+```javascript
+const wrldNavigation = {
+  hub: "WRLD Tech Docs",
+  divisions: ["WRLD.tech", "WRLD.host", "WRLD.design", "WRLD.Services", "WRLD.Support", "WRLD.AI"],
+  publicEntry: "/",
+  portalEntry: "https://portal.wrld.tech",
+  directoryEntry: "https://wrld.one"
+};
+
+export default wrldNavigation;
+```
+
+The example above shows how a shared navigation object can keep labels consistent across your site. You can adapt the same pattern for menus, breadcrumbs, or help-center sidebars.
+
+<CodeGroup tabs="JavaScript,JSON">
+  ```javascript
+  const siteMap = {
+    title: "WRLD Tech Docs",
+    sections: [
+      "Getting Started",
+      "Division Overviews",
+      "Support",
+      "Quickstart"
+    ]
+  };
+  ```
+
+  ```json
+  {
+    "title": "WRLD Tech Docs",
+    "sections": [
+      "Getting Started",
+      "Division Overviews",
+      "Support",
+      "Quickstart"
+    ]
+  }
+  ```
+</CodeGroup>
+
+## Best practices
+
+- Keep division names stable and easy to scan.
+- Use one primary term for each concept.
+- Link from the hub to the most relevant division page.
+- Reserve the portal for authenticated workflows.
+- Keep public and private content clearly separated.
+
+<Expandable title="When should you add a new division page?" default-open="false">
+
+Add a new page when a division has distinct users, workflows, or support paths. If the content is just a variation of an existing topic, extend the current page instead of creating a duplicate.
+
+</Expandable>
+
+<Expandable title="How do you keep documentation consistent?" default-open="false">
+
+Use shared terminology, reuse the same navigation labels, and keep examples aligned with the current structure. A small style guide prevents confusion later.
+
+</Expandable>
+
+## Next steps
+
+Once you understand the structure, document each division with the same pattern: overview, entry points, common tasks, and support paths. That makes the hub predictable for both new and experienced readers.
+
+<Callout kind="tip">
+
+Use `/llms.txt` as a discovery aid when you need to inventory available pages before expanding the documentation set.
+
+</Callout>

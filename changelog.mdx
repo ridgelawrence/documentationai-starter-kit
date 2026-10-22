@@ -1,0 +1,180 @@
+---
+title: Changelog
+description: Track recent documentation updates, new pages, and important changes to WRLD Tech's knowledge base. Review the latest improvements and revisions.
+---
+
+## Overview
+
+This changelog highlights recent updates to the WRLD Tech documentation hub. You can use it to track new pages, content revisions, and navigation improvements across the WRLD help center.
+
+If you are looking for the complete site map before exploring further, fetch the documentation index at [`/llms.txt`](https://help.wrld.tech/llms.txt). That file is the fastest way to discover what is available across the WRLD divisions.
+
+<Callout kind="info">
+
+This page is a starter kit template. Adapt the version history, dates, and descriptions to match your own documentation workflow.
+
+</Callout>
+
+## Recent updates
+
+<Update label="2026-10-15" description="v1.4.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added a clearer landing path for readers who need product-specific documentation.
+- Introduced a more structured index flow for the WRLD Tech help center.
+- Expanded coverage for cross-division navigation so users can move between sections faster.
+
+## Improvements
+
+- Refined page descriptions to make search results easier to scan.
+- Updated introductory guidance to better explain the purpose of the hub.
+- Standardized language across top-level pages for a more consistent reading experience.
+
+## Bug Fixes
+
+- Fixed inconsistent wording in the navigation summary.
+- Corrected a few broken reference labels in supporting content.
+
+</Update>
+
+<Update label="2026-09-20" description="v1.3.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added a documented entry point for the WRLD Tech overview page.
+- Expanded quickstart guidance to help new users find the right next step sooner.
+- Added a reusable pattern for presenting division overviews.
+
+## Bug Fixes
+
+- Fixed an issue where some internal references were unclear in the help copy.
+- Resolved inconsistent capitalization in division names.
+- Corrected a link label that did not match its destination.
+
+</Update>
+
+<Update label="2026-08-08" description="v1.2.0" tags={["improvement"]}>
+
+## Improvements
+
+- Improved content hierarchy so readers can scan major sections more easily.
+- Tightened the wording of instructional text to make the documentation more direct.
+- Simplified the onboarding language for a better first-time experience.
+
+## Notes
+
+- This release focused on documentation quality rather than new product behavior.
+- You should expect future updates to continue refining structure and clarity.
+
+</Update>
+
+## How to read this page
+
+### What to look for
+
+Each update entry uses a label date, a version description, and tags that summarize the change type. That makes it easier to spot feature releases, minor corrections, and content refinements at a glance.
+
+### How to use it
+
+Use this page when you want to verify whether a guide, page structure, or navigation path has changed recently. If you are maintaining documentation, compare the newest entry with the previous one to see what changed and why.
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="book-open" href="/quickstart">
+
+  Learn the basic workflow for getting started with WRLD Tech documentation.
+
+  </Card>
+  <Card title="Overview" icon="external-link" href="/introduction">
+
+  Review the main entry point for the WRLD Tech help center.
+
+  </Card>
+</Columns>
+
+## Change categories
+
+| Tag | Meaning | When to use |
+|-----|---------|-------------|
+| feature | New content or documentation capability | You added a page, section, or workflow |
+| improvement | Better clarity or structure | You refined wording, layout, or navigation |
+| bugfix | Correction to inaccurate content | You fixed a broken link or unclear instruction |
+| breaking | A change that alters previous guidance | You changed a process that readers must follow differently |
+
+## Suggested publishing workflow
+
+<Steps>
+  <Step title="Draft the change" icon="edit">
+
+  Write a concise summary of what changed, including the page name and the reason for the update.
+
+  </Step>
+  <Step title="Review the impact" icon="shield">
+
+  Check whether the update affects navigation, onboarding, or any linked pages.
+
+  </Step>
+  <Step title="Publish the entry" icon="check-circle">
+
+  Add the new version note, then confirm that the date and tags match the release.
+
+  </Step>
+</Steps>
+
+## Examples by language
+
+Use a consistent format if you want to automate changelog generation from a release note file or a documentation pipeline.
+
+<CodeGroup tabs="JavaScript,Python,Bash">
+  ```javascript
+const updates = [
+  {
+    date: "2026-10-15",
+    version: "v1.4.0",
+    tags: ["feature", "improvement"]
+  }
+];
+
+console.log(updates);
+```
+
+  ```python
+updates = [
+    {
+        "date": "2026-10-15",
+        "version": "v1.4.0",
+        "tags": ["feature", "improvement"],
+    }
+]
+
+print(updates)
+```
+
+  ```bash
+cat changelog.json
+```
+</CodeGroup>
+
+<ExpandableGroup>
+  <Expandable title="What should a good changelog entry include?" default-open="true">
+
+  A good entry includes a date, a version label, and a short explanation of what changed. It should tell readers whether the update adds content, improves clarity, or fixes something important.
+
+  </Expandable>
+  <Expandable title="How many entries should you show?" default-open="false">
+
+  Show the most recent 2-3 updates near the top of the page. If you need a longer history, consider archiving older entries lower on the page or on a separate history page.
+
+  </Expandable>
+  <Expandable title="Should documentation updates be separate from product updates?" default-open="false">
+
+  Yes. Documentation changelogs work best when they focus on content, navigation, and guidance changes rather than product release notes.
+
+  </Expandable>
+</ExpandableGroup>
+
+## Next steps
+
+If you are customizing this template, replace the sample dates and summaries with your own release history. Keep the tone direct, maintain the same structure, and use the same versioning pattern so readers can compare entries quickly.
+
+You can also link this page to your broader help center index, division overview pages, and any release note archive you maintain internally.
